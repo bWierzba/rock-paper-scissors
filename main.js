@@ -31,6 +31,8 @@ function checkResult(player, ai) {
         return 'draw';
     }
     else if ((player === 'paper' && ai === 'rock') || (player === 'rock' && ai === 'scissors') || (player === 'scissors' && ai === 'paper')) {
+        console.log(player)
+        console.log(ai)
         return 'win';
     }
     else {
@@ -53,7 +55,7 @@ function publishResult(player, ai, result) {
     }
     if (result === 'draw') {
         document.querySelector('.ties span').textContent = ++gameSummary.draws
-        document.querySelector('h2').textContent = 'DRAW'
+        document.querySelector('[data-summary="who-won"]').textContent = 'DRAW'
     }
 }
 
